@@ -7,6 +7,54 @@
     android:clickable="false"
     tools:context=".OverviewActivity">
 
+    <Button
+        android:id="@+id/avgSleepClassification"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/circle_button"
+        android:text="Deprived"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/avgSleepDuration"
+        app:layout_constraintTop_toBottomOf="@+id/D40" />
+
+    <Button
+        android:id="@+id/avgSleepDuration"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/circle_button"
+        android:text="2.9 hrs"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/avgSleepClassification"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/D37" />
+
+    <TextView
+        android:id="@+id/totalSleepTimeLabel"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="5dp"
+        android:text="Duration"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avgSleepDuration" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="60dp"
+        android:text="Status"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avgSleepClassification" />
+
     <LinearLayout
         android:id="@+id/bottomNavBar"
         android:layout_width="fill_parent"
@@ -40,9 +88,9 @@
         <Button
             android:id="@+id/sleepHistoryBtn"
             android:layout_width="wrap_content"
-            android:radius="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
+            android:radius="0dp"
             android:text="History"
             android:textColor="@color/white"
             android:tooltipText="History" />
