@@ -7,6 +7,43 @@
     android:clickable="false"
     tools:context=".HistoryFragment">
 
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/fieldColor"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/overviewBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:tooltipText="Overview"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <ImageButton
+            android:id="@+id/trackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:tooltipText="Track"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <ImageButton
+            android:id="@+id/sleepHistoryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:tooltipText="History"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/PrevMonthBtn"
         android:layout_width="wrap_content"
