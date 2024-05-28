@@ -50,4 +50,5 @@ dependencies {
     implementation ("androidx.credentials:credentials:<latest version>")
     implementation ("androidx.credentials:credentials-play-services-auth:<latest version>")
     implementation ("com.google.android.libraries.identity.googleid:googleid:<latest version>")
+    implementation("com.google.firebase:firebase-appcheck-playintegrity")
 }
