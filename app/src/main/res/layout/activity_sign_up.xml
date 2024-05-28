@@ -120,14 +120,14 @@
         android:layout_width="fill_parent"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
         android:text="@string/createAccount"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordField" />
+        app:layout_constraintTop_toBottomOf="@+id/signUpServerMessage" />
 
     <TextView
         android:id="@+id/alreadyHaveAccountText"
@@ -150,5 +150,18 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/alreadyHaveAccountText"
         app:layout_constraintTop_toBottomOf="@+id/createAccountBtn" />
+
+    <TextView
+        android:id="@+id/signUpServerMessage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:text="Insert Server Response Message"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordField" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

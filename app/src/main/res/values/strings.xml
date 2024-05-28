@@ -7,6 +7,7 @@
     <string name="loginRedirect"><u>Log in</u></string>
     <string name="signUpRedirect"><u>Sign Up</u></string>
     <string name="retrieveAccountRedirect"><u>Retrieve Account</u></string>
+    <string name="skip"><u>Skip</u></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
