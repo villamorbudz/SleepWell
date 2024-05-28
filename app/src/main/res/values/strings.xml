@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SleepWell</string>
+
+    <string name="login">Log in</string>
+    <string name="createAccount">Create Account</string>
+    <string name="enterDetailsSubtitle">Please enter your details to continue</string>
+    <string name="loginRedirect"><u>Log in</u></string>
+    <string name="signUpRedirect"><u>Sign Up</u></string>
+    <string name="retrieveAccountRedirect"><u>Retrieve Account</u></string>
+</resources>
