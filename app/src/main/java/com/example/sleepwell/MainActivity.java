@@ -24,10 +24,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
-//        FirebaseDatabase db = FirebaseDatabase.getInstance();
-//        DatabaseReference dbf = db.getReference("GilesGwaps");
-//        dbf.setValue("TRUEE");
-
         findViewById(R.id.testButton).setOnClickListener(view -> {
             Intent redirect = new Intent(MainActivity.this, OverviewActivity.class);
             startActivity(redirect);

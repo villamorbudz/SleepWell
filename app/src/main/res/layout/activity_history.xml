@@ -5,42 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="false"
-    tools:context=".HistoryFragment">
+    tools:context=".OverviewActivity">
 
     <LinearLayout
         android:id="@+id/bottomNavBar"
         android:layout_width="fill_parent"
         android:layout_height="75dp"
         android:layout_marginBottom="25dp"
-        android:background="@color/fieldColor"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
+        <Button
             android:id="@+id/overviewBtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:tooltipText="Overview"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:radius="0dp"
+            android:text="Overview"
+            android:textColor="@color/white"
+            android:tooltipText="Overview" />
 
-        <ImageButton
+        <Button
             android:id="@+id/trackBtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:tooltipText="Track"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:radius="0dp"
+            android:text="Track"
+            android:textColor="@color/white"
+            android:tooltipText="Track" />
 
-        <ImageButton
+        <Button
             android:id="@+id/sleepHistoryBtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:radius="0dp"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:tooltipText="History"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:text="History"
+            android:textColor="@color/white"
+            android:tooltipText="History" />
 
     </LinearLayout>
 
@@ -52,6 +57,7 @@
         android:layout_weight="1"
         android:textColor="@color/primaryColor"
         app:icon="?attr/actionModeCloseDrawable"
+        app:iconTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sleepHistoryText"
         tools:text="Prev" />
@@ -81,6 +87,7 @@
         android:text="Next"
         android:textColor="@color/primaryColor"
         app:icon="?attr/actionModeCloseDrawable"
+        app:iconTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sleepHistoryText" />
 
@@ -184,6 +191,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="01"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sundayText" />
 
@@ -196,6 +204,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="02"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D1"
         app:layout_constraintTop_toBottomOf="@+id/mondayText" />
 
@@ -208,6 +217,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="03"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D2"
         app:layout_constraintTop_toBottomOf="@+id/tuesdayText" />
 
@@ -220,6 +230,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="04"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D3"
         app:layout_constraintTop_toBottomOf="@+id/wednesdayText" />
 
@@ -232,6 +243,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="05"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D6"
         app:layout_constraintTop_toBottomOf="@+id/thursdayText" />
 
@@ -244,6 +256,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="06"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D7"
         app:layout_constraintTop_toBottomOf="@+id/fridayText" />
 
@@ -256,6 +269,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="07"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/saturdayText" />
 
@@ -268,6 +282,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="01"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D1" />
 
@@ -280,6 +295,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="02"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D8"
         app:layout_constraintTop_toBottomOf="@+id/D2" />
 
@@ -292,6 +308,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="03"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D9"
         app:layout_constraintTop_toBottomOf="@+id/D3" />
 
@@ -304,6 +321,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="04"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D10"
         app:layout_constraintTop_toBottomOf="@+id/D4" />
 
@@ -316,6 +334,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="05"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D13"
         app:layout_constraintTop_toBottomOf="@+id/D5" />
 
@@ -328,6 +347,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="06"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D14"
         app:layout_constraintTop_toBottomOf="@+id/D6" />
 
@@ -340,6 +360,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="07"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D7" />
 
@@ -352,6 +373,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="01"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D8" />
 
@@ -364,6 +386,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="02"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D15"
         app:layout_constraintTop_toBottomOf="@+id/D9" />
 
@@ -376,6 +399,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="03"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D16"
         app:layout_constraintTop_toBottomOf="@+id/D10" />
 
@@ -388,6 +412,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="04"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D17"
         app:layout_constraintTop_toBottomOf="@+id/D11" />
 
@@ -400,6 +425,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="05"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D20"
         app:layout_constraintTop_toBottomOf="@+id/D12" />
 
@@ -412,6 +438,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="06"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D28"
         app:layout_constraintTop_toBottomOf="@+id/D13" />
 
@@ -424,6 +451,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="07"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D14" />
 
@@ -436,6 +464,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="01"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D15" />
 
@@ -448,6 +477,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="02"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D22"
         app:layout_constraintTop_toBottomOf="@+id/D16" />
 
@@ -460,6 +490,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="03"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D23"
         app:layout_constraintTop_toBottomOf="@+id/D17" />
 
@@ -472,6 +503,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="04"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D24"
         app:layout_constraintTop_toBottomOf="@+id/D18" />
 
@@ -484,6 +516,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="05"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D27"
         app:layout_constraintTop_toBottomOf="@+id/D19" />
 
@@ -496,6 +529,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="06"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D35"
         app:layout_constraintTop_toBottomOf="@+id/D20" />
 
@@ -508,6 +542,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="07"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D21" />
 
@@ -520,6 +555,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="01"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D22" />
 
@@ -532,6 +568,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="02"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D29"
         app:layout_constraintTop_toBottomOf="@+id/D23" />
 
@@ -544,6 +581,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="03"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D30"
         app:layout_constraintTop_toBottomOf="@+id/D24" />
 
@@ -556,6 +594,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="04"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D31"
         app:layout_constraintTop_toBottomOf="@+id/D25" />
 
@@ -568,6 +607,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="05"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D34"
         app:layout_constraintTop_toBottomOf="@+id/D26" />
 
@@ -580,6 +620,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="06"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D35"
         app:layout_constraintTop_toBottomOf="@+id/D27" />
 
@@ -592,6 +633,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="07"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D28" />
 
@@ -604,6 +646,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="01"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D29" />
 
@@ -616,6 +659,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="02"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D36"
         app:layout_constraintTop_toBottomOf="@+id/D30" />
 
@@ -628,6 +672,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="03"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D37"
         app:layout_constraintTop_toBottomOf="@+id/D31" />
 
@@ -640,6 +685,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="04"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/D38"
         app:layout_constraintTop_toBottomOf="@+id/D32" />
 
@@ -652,6 +698,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="05"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D41"
         app:layout_constraintTop_toBottomOf="@+id/D33" />
 
@@ -664,6 +711,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="06"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/D42"
         app:layout_constraintTop_toBottomOf="@+id/D34" />
 
@@ -676,6 +724,7 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="07"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D35" />
 

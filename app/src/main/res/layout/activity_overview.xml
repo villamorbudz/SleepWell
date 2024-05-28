@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context=".OverviewFragment">
+    tools:context=".OverviewActivity">
 
     <LinearLayout
         android:id="@+id/bottomNavBar"
@@ -18,29 +18,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
+        <Button
             android:id="@+id/overviewBtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:tooltipText="Overview"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:text="Overview"
+            android:textColor="@color/white"
+            android:tooltipText="Overview" />
 
-        <ImageButton
+        <Button
             android:id="@+id/trackBtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:tooltipText="Track"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:text="Track"
+            android:textColor="@color/white"
+            android:tooltipText="Track" />
 
-        <ImageButton
+        <Button
             android:id="@+id/sleepHistoryBtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:tooltipText="History"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:text="History"
+            android:textColor="@color/white"
+            android:tooltipText="History" />
 
     </LinearLayout>
 
@@ -98,6 +101,7 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/circle_button"
             android:text="39.2 hrs"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/avgSleepDuration"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -110,6 +114,7 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/circle_button"
             android:text="2.9 hrs"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/avgSleepClassification"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/totalSleepTime"
@@ -122,6 +127,7 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/circle_button"
             android:text="Deprived"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/avgSleepDuration"

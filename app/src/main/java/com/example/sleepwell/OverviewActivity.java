@@ -3,6 +3,7 @@ package com.example.sleepwell;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class OverviewActivity extends AppCompatActivity {
 
@@ -10,7 +11,7 @@ public class OverviewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overview);
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         findViewById(R.id.sleepHistoryBtn).setOnClickListener(view -> {
             Intent redirect = new Intent(OverviewActivity.this, HistoryActivity.class);
             startActivity(redirect);

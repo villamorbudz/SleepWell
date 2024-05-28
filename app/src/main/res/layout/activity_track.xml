@@ -6,4 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".TrackActivity">
 
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/overviewBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="Overview"
+            android:textColor="@color/white"
+            android:tooltipText="Overview" />
+
+        <Button
+            android:id="@+id/trackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="Track"
+            android:textColor="@color/white"
+            android:tooltipText="Track" />
+
+        <Button
+            android:id="@+id/sleepHistoryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="History"
+            android:textColor="@color/white"
+            android:tooltipText="History" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
