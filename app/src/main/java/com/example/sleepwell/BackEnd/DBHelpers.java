@@ -34,6 +34,7 @@ public class DBHelpers {
                     newpath.child("Password").setValue(Password);
                     newpath.child("Username").setValue(Username);
                     User currUser = new User(String.valueOf(maxindex), Username, Email);
+                    GlobalEntities.currUser = currUser;
                     res[0] = currUser;
                 }
             }
