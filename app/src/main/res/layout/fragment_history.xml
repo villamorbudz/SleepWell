@@ -16,7 +16,7 @@
         android:textColor="@color/primaryColor"
         app:icon="?attr/actionModeCloseDrawable"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/periodHistoryText"
+        app:layout_constraintTop_toBottomOf="@id/sleepHistoryText"
         tools:text="Prev" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/NextMonthBtn"
         app:layout_constraintStart_toEndOf="@+id/PrevMonthBtn"
-        app:layout_constraintTop_toBottomOf="@+id/periodHistoryText" />
+        app:layout_constraintTop_toBottomOf="@+id/sleepHistoryText" />
 
     <Button
         android:id="@+id/NextMonthBtn"
@@ -45,7 +45,7 @@
         android:textColor="@color/primaryColor"
         app:icon="?attr/actionModeCloseDrawable"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/periodHistoryText" />
+        app:layout_constraintTop_toBottomOf="@id/sleepHistoryText" />
 
     <TextView
         android:id="@+id/sundayText"
@@ -643,12 +643,12 @@
         app:layout_constraintTop_toBottomOf="@+id/D35" />
 
     <TextView
-        android:id="@+id/periodHistoryText"
+        android:id="@+id/sleepHistoryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="129dp"
         android:layout_marginTop="50dp"
-        android:text="Period History"
+        android:text="Sleep History"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

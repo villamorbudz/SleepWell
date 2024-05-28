@@ -43,6 +43,7 @@ public class HistoryFragment extends Fragment {
     int currYear;
     int currDay;
     int dayOffset;
+    View rootView;
 
     // Year -> Month -> Day -> Status
     HashMap<Integer,HashMap<Integer, HashMap<Integer,Integer>>> yearHash;
@@ -79,7 +80,7 @@ public class HistoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_history, container, false);
+        rootView = inflater.inflate(R.layout.fragment_history, container, false);
 
         baseButtons = new ArrayList<>();
         dayButtons = new ArrayList<>();
@@ -106,13 +107,12 @@ public class HistoryFragment extends Fragment {
     }
 
     private void moveMonth(int year, int month) {
-        TextView myText = requireView().findViewById(R.id.MYtext);
+        TextView myText = rootView.findViewById(R.id.MYtext);
         String[] monthsString = {
                 "January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
         };
         myText.setText(monthsString[month] + " " + year);
-        finalDayHash = getStatus(year, month);
 
         Calendar cal = new GregorianCalendar(year, month, 1);
         int startDayInWeek = cal.get(Calendar.DAY_OF_WEEK);
@@ -134,29 +134,9 @@ public class HistoryFragment extends Fragment {
         for (int x = 0; x < daysInMonth; x++) {
             Button btn = dayButtons.get(x);
             btn.setText(Integer.toString(x + 1));
+            btn.setBackgroundColor(Color.WHITE);
             btn.setTextColor(Color.BLACK);
             btn.setVisibility(View.VISIBLE);
-
-            int status = finalDayHash.getOrDefault(x + 1, 0);
-            switch (status) {
-                case 0: // None
-                    btn.setBackgroundColor(Color.TRANSPARENT); // No background color
-                    break;
-                case 1: // Light
-                    btn.setBackgroundColor(Color.parseColor("#80FF0000")); // Light-opacity red
-                    btn.setTextColor(Color.WHITE);
-                    break;
-                case 2: // Medium
-                    btn.setBackgroundColor(Color.RED); // Medium-opacity red
-                    btn.setTextColor(Color.WHITE);
-                    break;
-                case 3: // Heavy
-                    btn.setBackgroundColor(Color.parseColor("#FF8B0000")); // Red
-                    btn.setTextColor(Color.WHITE);
-                    break;
-                default:
-                    break;
-            }
         }
     }
 
@@ -171,12 +151,5 @@ public class HistoryFragment extends Fragment {
             currMonth %= 2;
         }
         moveMonth(currYear, currMonth);
-    }
-
-    private HashMap<Integer, Integer> getStatus(int year, int month) {
-//        HashMap<Integer, HashMap<Integer, HashMap<Integer, Integer>>> yearHash = PeriodStatusManager.getYearHash();
-        return yearHash
-                .computeIfAbsent(year, k -> new HashMap<>())
-                .computeIfAbsent(month, k -> new HashMap<>());
     }
 }
