@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 
@@ -25,6 +27,9 @@ public class TrackActivity extends AppCompatActivity {
     int currYear;
     int currDay;
     int dayOffset;
+
+    ToggleButton trackingbtn;
+    long startTime;
 
     HashMap<Integer,HashMap<Integer, HashMap<Integer,Integer>>> yearHash;
     HashMap<Integer,Integer> finalDayHash;
@@ -44,6 +49,12 @@ public class TrackActivity extends AppCompatActivity {
             Intent redirect = new Intent(TrackActivity.this, HistoryActivity.class);
             startActivity(redirect);
             finish();
+        });
+
+        trackingbtn = findViewById(R.id.toggleTrackingBtn);
+        trackingbtn.setOnClickListener(view ->{
+            if(trackingbtn.isChecked()){
+            }
         });
 
         baseButtons = new ArrayList<>();

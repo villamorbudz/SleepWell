@@ -105,7 +105,7 @@ public class DBHelpers {
     public static boolean SendSleepData(SleepData sd){
         final boolean[] res = {false};
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference usersRef = database.child("Users").child("0").child("SleepData");
+        DatabaseReference usersRef = database.child("Users").child(GlobalEntities.currUser.getUserID()).child("SleepData");
         usersRef.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
