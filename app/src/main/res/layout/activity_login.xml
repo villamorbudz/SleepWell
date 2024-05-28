@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0B0A0A"
     tools:context=".LoginActivity">
 
     <EditText
@@ -13,10 +14,12 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="50dp"
-        android:digits="1"
+        android:background="@drawable/rounded_textfield_background"
+        android:paddingStart="20dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameField" />
@@ -28,21 +31,26 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="50dp"
+        android:background="@drawable/rounded_textfield_background"
+        android:paddingStart="20dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="text"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginSubtitleText" />
 
     <TextView
         android:id="@+id/signUpTitleText"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="95dp"
+        android:layout_marginEnd="50dp"
         android:text="Login Account"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,12 +60,13 @@
 
     <TextView
         android:id="@+id/loginSubtitleText"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="92dp"
+        android:layout_marginEnd="50dp"
         android:text="@string/enterDetailsSubtitle"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +89,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
         android:layout_marginTop="25dp"
+        android:background="@color/backgroundColor"
         android:text="@string/retrieveAccountRedirect"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/forgotPasswordText"
         app:layout_constraintTop_toBottomOf="@+id/passwordField" />
@@ -93,6 +104,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
         android:text="@string/login"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgotPasswordText" />
@@ -114,6 +126,7 @@
         android:layout_marginStart="3dp"
         android:layout_marginTop="25dp"
         android:text="@string/signUpRedirect"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/alreadyHaveAccountText"
         app:layout_constraintTop_toBottomOf="@+id/createAccountBtn" />
