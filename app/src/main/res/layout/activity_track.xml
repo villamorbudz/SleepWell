@@ -744,7 +744,7 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/circle_button"
         android:backgroundTint="@color/primaryColor"
