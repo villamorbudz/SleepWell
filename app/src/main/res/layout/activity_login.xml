@@ -4,11 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0B0A0A"
     tools:context=".LoginActivity">
 
+    <TextView
+        android:id="@+id/dontHaveAccountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="25dp"
+        android:text="Don't have an account yet?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+
+    <TextView
+        android:id="@+id/signUpRedirect"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/signUpRedirect"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/dontHaveAccountText"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+
     <EditText
-        android:id="@+id/passwordField"
+        android:id="@+id/login_passwordField"
         android:layout_width="fill_parent"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
@@ -22,10 +45,10 @@
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameField" />
+        app:layout_constraintTop_toBottomOf="@+id/login_usernameField" />
 
     <EditText
-        android:id="@+id/usernameField"
+        android:id="@+id/login_usernameField"
         android:layout_width="fill_parent"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
@@ -42,11 +65,11 @@
         app:layout_constraintTop_toBottomOf="@+id/loginSubtitleText" />
 
     <TextView
-        android:id="@+id/signUpTitleText"
+        android:id="@+id/loginTitleText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="50dp"
         android:text="Login Account"
         android:textAlignment="center"
@@ -70,34 +93,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpTitleText" />
-
-    <TextView
-        android:id="@+id/forgotPasswordText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="25dp"
-        android:text="Forgot Password?"
-        android:textAlignment="viewStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordField" />
+        app:layout_constraintTop_toBottomOf="@+id/loginTitleText" />
 
     <TextView
         android:id="@+id/retrieveAccountRedirect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="24dp"
         android:background="@color/backgroundColor"
         android:text="@string/retrieveAccountRedirect"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/forgotPasswordText"
-        app:layout_constraintTop_toBottomOf="@+id/passwordField" />
+        app:layout_constraintTop_toBottomOf="@+id/login_passwordField" />
+
+    <TextView
+        android:id="@+id/forgotPasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="24dp"
+        android:text="Forgot Password?"
+        android:textAlignment="viewStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_passwordField" />
 
     <Button
-        android:id="@+id/createAccountBtn"
+        android:id="@+id/loginBtn"
         android:layout_width="fill_parent"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
@@ -106,30 +129,9 @@
         android:text="@string/login"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginServerMessage" />
-
-    <TextView
-        android:id="@+id/alreadyHaveAccountText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="97dp"
-        android:layout_marginTop="25dp"
-        android:text="Don't have an account yet?"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createAccountBtn" />
-
-    <TextView
-        android:id="@+id/loginRedirect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="25dp"
-        android:text="@string/signUpRedirect"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/alreadyHaveAccountText"
-        app:layout_constraintTop_toBottomOf="@+id/createAccountBtn" />
 
     <TextView
         android:id="@+id/loginServerMessage"
