@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="50dp"
-        android:text="Good Evening,"
+        android:text="Good Day,"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -85,7 +85,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Past 7 Days"
+            android:text="Today"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold"
