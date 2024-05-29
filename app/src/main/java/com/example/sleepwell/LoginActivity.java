@@ -81,8 +81,10 @@ public class LoginActivity extends AppCompatActivity {
                         String index = String.valueOf(userSnapshot.getKey());
                         User u1= new User(index,userUsername,userPassword);
                         GlobalEntities.currUser = u1;
-                        Toast.makeText(getApplicationContext(),GlobalEntities.currUser.getUserName(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),GlobalEntities.currUser.getUserName(), Toast.LENGTH_SHORT).show();
                         break;
+                    }else{
+                        return;
                     }
                 }
                 if (!found) {

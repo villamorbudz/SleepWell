@@ -59,7 +59,7 @@ public class OverviewActivity extends AppCompatActivity {
                 for(int num: slepSec){
                     total+=num;
                 }
-                //if(total == 0) return;
+                if(total == 0) return;
                 double hour = (total/60)/60.0;
                 //Duration.setText(String.format("%.2f",hour));
                 time.setText(String.valueOf(total));
