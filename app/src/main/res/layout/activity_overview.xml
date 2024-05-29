@@ -12,7 +12,6 @@
         android:layout_width="fill_parent"
         android:layout_height="75dp"
         android:layout_marginBottom="25dp"
-        android:background="@color/fieldColor"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,43 +22,43 @@
             android:id="@+id/overviewBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingVertical="12dp"
-            android:paddingHorizontal="16dp"
             android:layout_marginStart="12dp"
+            android:layout_weight="1"
             android:background="@drawable/button_main"
             android:fontFamily="@font/montserrat_semibold"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
             android:text="Overview"
             android:textColor="@color/text_white"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/trackBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingVertical="12dp"
-            android:paddingHorizontal="16dp"
             android:layout_marginStart="12dp"
+            android:layout_weight="1"
             android:background="@drawable/button_main"
             android:fontFamily="@font/montserrat_semibold"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
             android:text="Track"
             android:textColor="@color/text_white"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/sleepHistoryBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingVertical="12dp"
-            android:paddingHorizontal="16dp"
             android:layout_marginStart="12dp"
+            android:layout_weight="1"
             android:background="@drawable/button_main"
             android:fontFamily="@font/montserrat_semibold"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
             android:text="History"
             android:textColor="@color/text_white"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
 
     </LinearLayout>
