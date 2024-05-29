@@ -18,32 +18,49 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+
         <Button
             android:id="@+id/overviewBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/button_main"
+            android:fontFamily="@font/montserrat_semibold"
             android:text="Overview"
-            android:textColor="@color/white"
-            android:tooltipText="Overview" />
+            android:textColor="@color/text_white"
+            android:textSize="14sp"/>
 
         <Button
             android:id="@+id/trackBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/button_main"
+            android:fontFamily="@font/montserrat_semibold"
             android:text="Track"
-            android:textColor="@color/white"
-            android:tooltipText="Track" />
+            android:textColor="@color/text_white"
+            android:textSize="14sp"/>
 
         <Button
             android:id="@+id/sleepHistoryBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/button_main"
+            android:fontFamily="@font/montserrat_semibold"
             android:text="History"
-            android:textColor="@color/white"
-            android:tooltipText="History" />
+            android:textColor="@color/text_white"
+            android:textSize="14sp"/>
+
 
     </LinearLayout>
 

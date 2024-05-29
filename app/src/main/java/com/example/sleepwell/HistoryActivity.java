@@ -139,7 +139,7 @@ public class HistoryActivity extends AppCompatActivity {
 
                         }
                     };
-                    DBHelpers.getSleepData(String.valueOf(currYear),String.valueOf(currMonth),Day,slepSec,run);
+                    DBHelpers.getSleepData(String.valueOf(currYear),String.valueOf(currMonth+1),Day,slepSec,run);
                 }
             });
 
