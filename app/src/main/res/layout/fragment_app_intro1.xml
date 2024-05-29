@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
@@ -7,45 +8,48 @@
     android:layout_height="match_parent"
     tools:context=".AppIntro.AppIntro1">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="400dp"
         android:background="@drawable/fragment_roundedbox"
-        android:orientation="vertical"
-        android:paddingStart="25dp"
-        android:paddingEnd="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/introTitle1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_weight="0"
-            android:text="Welcome to SleepWell"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/introSubtitleText1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="75dp"
-            android:layout_weight="0"
-            android:paddingStart="50dp"
-            android:paddingEnd="50dp"
-            android:text="Track, analyze, and improve your sleep"
-            android:textAlignment="center"
-            android:textSize="24sp" />
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="54dp"
+        android:layout_alignParentBottom="true"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/introTitle1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/app_intro_welcome_to_sleepwell"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:fontFamily="@font/montserrat_bold"/>
+
+            <TextView
+                android:id="@+id/introSubtitleText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="0"
+                android:text="Your ultimate personal guide for restful nights."
+                android:textAlignment="center"
+                android:textColor="@color/text_white"
+                android:textSize="18sp"
+                android:fontFamily="@font/montserrat_regular"/>
+
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:layout_weight="0"
             android:orientation="horizontal">
@@ -67,7 +71,44 @@
                 android:layout_weight="1"
                 android:text="Next"
                 android:textColor="@color/white" />
-        </LinearLayout>
-    </LinearLayout>
+        </LinearLayout>-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/skipIntroBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+                android:background="@drawable/button_second"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/skip"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:textAllCaps="true" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/button_main"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Next"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

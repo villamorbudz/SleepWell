@@ -2,7 +2,7 @@
 <shape xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:ignore="MissingDefaultResource">
-    <solid android:color="@color/fieldColor" />
-    <corners android:topLeftRadius="50dp"
-        android:topRightRadius="50dp" />
+    <solid android:color="@color/backgroundColor" />
+    <corners android:topLeftRadius="54dp"
+        android:topRightRadius="54dp" />
 </shape>
