@@ -61,6 +61,6 @@ public class AppIntro3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_app_intro3, container, false);
+        return inflater.inflate(R.layout.fragment_app_intro_3, container, false);
     }
 }

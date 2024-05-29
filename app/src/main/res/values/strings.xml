@@ -12,4 +12,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sleep_well_logo">sleep well logo</string>
     <string name="app_intro_welcome_to_sleepwell">Welcome to SleepWell</string>
+    <string name="next">next</string>
+    <string name="load_node">load node</string>
+    <string name="app_intro_monitor_your_sleep">Monitor your Sleep</string>
+    <string name="app_intro_better_sleep_better_life">Better Sleep, Better Life</string>
 </resources>
