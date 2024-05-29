@@ -108,6 +108,8 @@ public class HistoryActivity extends AppCompatActivity {
                     String Year = String.valueOf(cal.get(Calendar.YEAR));
                     String Month = String.valueOf(cal.get(Calendar.MONTH)+1);
                     String Day = String.valueOf(finalX+1);
+                    status.setText("None");
+                    Duration.setText("0");
                     //Intent loadingScreen = new Intent(HistoryActivity.this, SignUpActivity.class);
                     //startActivity(loadingScreen);
                     Runnable run = new Runnable() {
@@ -137,7 +139,7 @@ public class HistoryActivity extends AppCompatActivity {
 
                         }
                     };
-                    DBHelpers.getSleepData(Year,Month,Day,slepSec,run);
+                    DBHelpers.getSleepData(String.valueOf(currYear),String.valueOf(currMonth+1),Day,slepSec,run);
                 }
             });
 

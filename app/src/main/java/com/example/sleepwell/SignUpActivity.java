@@ -49,7 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
                 return;
             }
             DBHelpers.CreateUser(Email,Password,Username);
-            Intent redirect = new Intent(SignUpActivity.this, OverviewActivity.class);
+            Intent redirect = new Intent(SignUpActivity.this, LoginActivity.class);
             startActivity(redirect);
             System.out.println("REDIRECT TO LOGIN");
             finish();
