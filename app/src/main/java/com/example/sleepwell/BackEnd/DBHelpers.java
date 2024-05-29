@@ -15,6 +15,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -72,7 +74,7 @@ public class DBHelpers {
     }*/
 
 
-    public static User loginUser(String username, String password) {
+    public static User loginUser(String username, String password,Runnable CloseFeature) {
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         DatabaseReference usersRef = database.child("Users");
         final User[] res = {null};
@@ -98,6 +100,7 @@ public class DBHelpers {
                 if (!found) {
                     System.out.println("Invalid username or password.");
                 }
+                CloseFeature.run();
             }
         });
         return res[0];
@@ -110,12 +113,33 @@ public class DBHelpers {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if(task.isSuccessful()){
-                    int index =(int) task.getResult().getChildrenCount();
+                    int index =(int) task.getResult().child(sd.getYear()).child(sd.getMonth()).child(sd.getDay()).getChildrenCount()+1;
                     usersRef.child(sd.getYear()).child(sd.getMonth()).child(sd.getDay()).child(String.valueOf(index)).setValue(String.valueOf(sd.getSleepDurSec()));
                 }
             }
         });
         res[0] = true; // get listener Here, your choice
         return res[0];
+    }
+    public static void getSleepData(String Year,String Month,String Date,final ArrayList<Integer> Container,Runnable CloseFeature){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference usersRef = database.child("Users").child(GlobalEntities.currUser.getUserID()).child("SleepData").child(Year).child(Month).child(Date);
+        usersRef.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if(task.isSuccessful()){
+
+                    DataSnapshot dt = task.getResult();
+                    int x = 1;
+                    for(DataSnapshot uS: dt.getChildren()){
+                        String Key = uS.getKey();
+                        Object o = uS.getValue();
+                        int TimeInSecs = Integer.parseInt((String)o);
+                        Container.add(TimeInSecs);
+                    }
+                }
+                CloseFeature.run();
+            }
+        });
     }
 }

@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+
+import com.example.sleepwell.BackEnd.DBHelpers;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -24,6 +28,8 @@ public class HistoryActivity extends AppCompatActivity {
     int currYear;
     int currDay;
     int dayOffset;
+    Button status;
+    Button Duration;
 
     HashMap<Integer,HashMap<Integer, HashMap<Integer,Integer>>> yearHash;
     HashMap<Integer,Integer> finalDayHash;
@@ -44,6 +50,8 @@ public class HistoryActivity extends AppCompatActivity {
             startActivity(redirect);
             finish();
         });
+        status = findViewById(R.id.avgSleepClassification);
+        Duration = findViewById(R.id.avgSleepDuration);
 
         baseButtons = new ArrayList<>();
         dayButtons = new ArrayList<>();
@@ -87,12 +95,58 @@ public class HistoryActivity extends AppCompatActivity {
 
         dayButtons = new ArrayList<>();
 
+
         for (int x = 0; x < daysInMonth; x++) {
-            dayButtons.add(baseButtons.get(startDayInWeek + x - 1));
+            Button btn = baseButtons.get(startDayInWeek + x - 1);
+            int finalX = x;
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getApplicationContext(),String.valueOf(finalX),Toast.LENGTH_SHORT);
+                    ArrayList<Integer> slepSec = new ArrayList<>();
+                    Calendar cal = Calendar.getInstance();
+                    String Year = String.valueOf(cal.get(Calendar.YEAR));
+                    String Month = String.valueOf(cal.get(Calendar.MONTH)+1);
+                    String Day = String.valueOf(finalX+1);
+                    //Intent loadingScreen = new Intent(HistoryActivity.this, SignUpActivity.class);
+                    //startActivity(loadingScreen);
+                    Runnable run = new Runnable() {
+                        @Override
+                        public void run() {
+                            //loadingScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+                            int total = 0;
+                            for(int num: slepSec){
+                                total+=num;
+                            }
+                            //if(total == 0) return;
+                            double hour = (total/60)/60.0;
+                            //Duration.setText(String.format("%.2f",hour));
+                            Duration.setText(String.valueOf(total));
+                            String stat = "0";
+                            if(hour > 10){
+                                stat = "Amazing";
+                            }else if(hour >= 7){
+                                stat = "Healthy";
+                            }else if(hour >= 4){
+                                stat = "Unhealthy";
+                            }else{
+                                stat = "Deathly";
+                            }
+                            status.setText(stat);
+                            //finish();
+
+                        }
+                    };
+                    DBHelpers.getSleepData(Year,Month,Day,slepSec,run);
+                }
+            });
+
+            dayButtons.add(btn);
         }
 
         for (int x = 0; x < daysInMonth; x++) {
             Button btn = dayButtons.get(x);
+            btn.setEnabled(true);
             btn.setText(Integer.toString(x + 1));
             btn.setBackgroundColor(Color.WHITE);
             btn.setTextColor(Color.BLACK);

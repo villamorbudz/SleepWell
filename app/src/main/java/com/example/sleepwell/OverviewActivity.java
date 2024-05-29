@@ -2,10 +2,15 @@ package com.example.sleepwell;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.example.sleepwell.BackEnd.GlobalEntities;
+
 public class OverviewActivity extends AppCompatActivity {
+    TextView tvUname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +22,8 @@ public class OverviewActivity extends AppCompatActivity {
             startActivity(redirect);
             finish();
         });
-
+        tvUname = findViewById(R.id.usernameText);
+        tvUname.setText(GlobalEntities.currUser.getUserName());
         findViewById(R.id.trackBtn).setOnClickListener(view -> {
             Intent redirect = new Intent(OverviewActivity.this, TrackActivity.class);
             startActivity(redirect);

@@ -38,11 +38,20 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(view -> {
             String Password = String.valueOf(tfPassword.getText());
             String Username = String.valueOf(tfUserName.getText());
-            loginUser(Username,Password);
+            if(Password.equals("") || Username.equals("")) return;
+            Intent loadingScreen = new Intent(LoginActivity.this, SignUpActivity.class);
+            startActivity(loadingScreen);
+            loginUser(Username, Password, new Runnable() {
+                @Override
+                public void run() {
+                    loadingScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Intent redirect = new Intent(LoginActivity.this, OverviewActivity.class);
+                    startActivity(redirect);
+                    System.out.println("REDIRECT TO SIGN UP");
+                    finish();
+                }
+            });
             System.out.println("LOGGING IN");
-            Intent redirect = new Intent(LoginActivity.this, OverviewActivity.class);
-            startActivity(redirect);
-            System.out.println("REDIRECT TO SIGN UP");
             finish();
         });
 
@@ -53,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         });
     }
-    public void loginUser(String username, String password) {
+    public void loginUser(String username, String password,Runnable CloseFeature) {
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         DatabaseReference usersRef = database.child("Users");
         usersRef.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -79,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (!found) {
                     System.out.println("Invalid username or password.");
                 }
+                CloseFeature.run();
             }
         });
     }

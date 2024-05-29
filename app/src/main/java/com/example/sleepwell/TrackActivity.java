@@ -11,6 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.example.sleepwell.BackEnd.DBHelpers;
+import com.example.sleepwell.BackEnd.SleepData;
+
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -33,7 +37,10 @@ public class TrackActivity extends AppCompatActivity {
 
     HashMap<Integer,HashMap<Integer, HashMap<Integer,Integer>>> yearHash;
     HashMap<Integer,Integer> finalDayHash;
-
+    String[] monthsString = {
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +60,17 @@ public class TrackActivity extends AppCompatActivity {
 
         trackingbtn = findViewById(R.id.toggleTrackingBtn);
         trackingbtn.setOnClickListener(view ->{
+            Date currDate = new Date();
             if(trackingbtn.isChecked()){
+                startTime = currDate.getTime();
+            }else{
+                int TimeInSecs = (int) ((currDate.getTime() - startTime)/1000);
+                Calendar cal = Calendar.getInstance();
+                String Year = String.valueOf(cal.get(Calendar.YEAR));
+                String Month = String.valueOf(cal.get(Calendar.MONTH)+1);
+                String Date = String.valueOf(cal.get(Calendar.DAY_OF_MONTH));
+                SleepData sp = new SleepData(Year,Month,Date, TimeInSecs);
+                DBHelpers.SendSleepData(sp);
             }
         });
 
