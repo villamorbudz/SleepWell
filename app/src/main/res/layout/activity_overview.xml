@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
-        android:text="User1234"
+        android:text="User"
         android:textAlignment="viewStart"
         android:textSize="28sp"
         android:textStyle="bold"
