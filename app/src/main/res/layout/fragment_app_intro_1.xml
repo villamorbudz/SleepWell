@@ -11,6 +11,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
+        android:background="@drawable/sleep_1"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:background="@drawable/fragment_roundedbox"
         android:paddingHorizontal="40dp"
         android:paddingVertical="54dp"
@@ -136,5 +141,6 @@
 
         </LinearLayout>
     </RelativeLayout>
+
 
 </RelativeLayout>
