@@ -23,12 +23,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
-        findViewById(R.id.testButton).setOnClickListener(view -> {
-            Intent redirect = new Intent(MainActivity.this, OverviewActivity.class);
-            startActivity(redirect);
-            System.out.println("REDIRECT TO SIGN UP");
-            finish();
-        });
     }
 }

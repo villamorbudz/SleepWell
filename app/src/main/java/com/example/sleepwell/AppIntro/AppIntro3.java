@@ -1,13 +1,14 @@
 package com.example.sleepwell.AppIntro;
 
+import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
+import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Button;
+import com.example.sleepwell.LoginActivity;
 import com.example.sleepwell.R;
 
 /**
@@ -17,12 +18,9 @@ import com.example.sleepwell.R;
  */
 public class AppIntro3 extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -30,15 +28,6 @@ public class AppIntro3 extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AppIntro3.
-     */
-    // TODO: Rename and change types and number of parameters
     public static AppIntro3 newInstance(String param1, String param2) {
         AppIntro3 fragment = new AppIntro3();
         Bundle args = new Bundle();
@@ -60,7 +49,28 @@ public class AppIntro3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_app_intro_3, container, false);
+        View view = inflater.inflate(R.layout.fragment_app_intro_3, container, false);
+
+        Button nextButton = view.findViewById(R.id.nextButton);
+        nextButton.setOnClickListener(v -> {
+            // Replace with the appropriate activity after AppIntro3
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+            // Finish the parent activity (MainActivity)
+            if (getActivity() != null) {
+                getActivity().finish();
+            }
+        });
+
+        Button skipButton = view.findViewById(R.id.skipIntroBtn);
+        skipButton.setOnClickListener(v -> {
+            // Start LoginActivity
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+            // Finish the parent activity (MainActivity)
+            if (getActivity() != null) {
+                getActivity().finish();
+            }
+        });
+
+        return view;
     }
 }
